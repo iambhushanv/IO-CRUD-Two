@@ -1,0 +1,30 @@
+<div class="row" *ngIf="getPostArr.length > 0 else noPost">
+    <div class="col-12 mb-5" *ngFor="let post of getPostArr; trackBy : trackByFun">
+        <div class="card">
+            <div class="card-header">
+                <h3>{{post.title}}</h3>
+            </div>
+            <div class="card-body">
+                <p>{{post.content}}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <button
+                (click)="onEdit(post)"
+                mat-mini-fab color="primary">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button
+                (click)="onRemove(post.id)"
+                mat-mini-fab color="warn">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #noPost>
+    <p class="alert alert-info">
+        No Posts !!!
+    </p>
+</ng-template>
