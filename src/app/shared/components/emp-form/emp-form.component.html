@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-body">
+        <h2>{{isInEditMode? 'Update Employee': 'Add Employee'}}</h2>
+        <div class="form-group">
+            <label class="font-weight-bold" for="" fname>First Name</label>
+            <input #fname type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="font-weight-bold" for="" lname>Last Name</label>
+            <input #lname type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="font-weight-bold" for="" Department>Department</label>
+            <input #Department type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="font-weight-bold" for="" Sallery>Sallery</label>
+            <input #Sallery type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="font-weight-bold" for="" isActive>Is Active</label>
+            <select #isActive class="form-control">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+        <button
+        (click)="onAdd()"
+        *ngIf="!isInEditMode" mat-raised-button color="primary" class="btn-block">Add Employee</button>
+        <button
+        (click)="onUpdate()"
+        *ngIf="isInEditMode" mat-raised-button color="warn" class="btn-block">Update Employee</button>
+
+
+    </div>
+</div>

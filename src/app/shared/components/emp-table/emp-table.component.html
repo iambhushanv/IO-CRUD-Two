@@ -1,11 +1,12 @@
-<table class="table table-bordered" *ngIf="getStdsInfo.length > 0; else nostd">
+
+<table class="table table-bordered" *ngIf="getEmpArr.length > 0 ; else noemp">
     <thead>
         <tr>
             <th>Sr No</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Email</th>
-            <th>Contact</th>
+            <th>Department</th>
+            <th>Sallery</th>
             <th>Is Active</th>
             <th>Edit</th>
             <th>Remove</th>
@@ -13,23 +14,23 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let std of getStdsInfo; let i = index; trackBy : trackByFun ">
+        <tr *ngFor="let emp of getEmpArr; let i = index; trackBy : trackByFun">
             <td>{{i+1}}</td>
-            <td>{{std.fname}}</td>
-            <td>{{std.lname}}</td>
-            <td>{{std.email}}</td>
-            <td>{{std.contact}}</td>
-            <td>{{std.isActive? 'Yes': 'No'}}</td>
+            <td>{{emp.fname}}</td>
+            <td>{{emp.lname}}</td>
+            <td>{{emp.department}}</td>
+            <td>{{emp.salary}}</td>
+            <td>{{emp.isActive}}</td>
             <td>
                 <button
-                (click)="onStdEdit(std)"
-                mat-mini-fab color="primary" class="mr-2">
+                (click)="onEdit(emp)"
+                mat-mini-fab color="primary">
                     <mat-icon>edit</mat-icon>
                 </button>
             </td>
             <td>
                 <button 
-                (click)="onRemove(std.stdId)"
+                (click)="onRemove(emp.empId)"
                 mat-mini-fab color="warn">
                     <mat-icon>delete</mat-icon>
                 </button>
@@ -37,8 +38,9 @@
         </tr>
     </tbody>
 </table>
-<ng-template #nostd>
+
+<ng-template #noemp>
     <p class="alert alert-info">
-        No Students !!!
+        No Employees !!!
     </p>
 </ng-template>

@@ -1,0 +1,20 @@
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <app-emp-form
+            (emitUpdateemp)="getEmitObj($event)"
+            [geteditObj]="editObj"
+            (emitEmp)="getnewEmp($event)"
+            ></app-emp-form>
+        </div>
+        <div class="col-md-6">
+            <app-emp-table
+            (emiteditOBj)="getEditObj($event)"
+            (emitRemoveId)="getRemoveId($event)"
+            [getEmpArr]="empArr"
+            ></app-emp-table>
+        </div>
+    </div>
+</div>
+

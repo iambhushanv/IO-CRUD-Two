@@ -11,6 +11,9 @@ import { GetConfirmComponent } from './shared/components/post-card/get-confirm/g
 import { StdDashboardComponent } from './shared/components/std-dashboard/std-dashboard.component';
 import { StdFormComponent } from './shared/components/std-form/std-form.component';
 import { StdTableComponent } from './shared/components/std-table/std-table.component';
+import { EmpDashboardComponent } from './shared/components/emp-dashboard/emp-dashboard.component';
+import { EmpTableComponent } from './shared/components/emp-table/emp-table.component';
+import { EmpFormComponent } from './shared/components/emp-form/emp-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { StdTableComponent } from './shared/components/std-table/std-table.compo
     GetConfirmComponent,
     StdDashboardComponent,
     StdFormComponent,
-    StdTableComponent
+    StdTableComponent,
+    EmpDashboardComponent,
+    EmpTableComponent,
+    EmpFormComponent
   ],
   imports: [
     BrowserModule,
