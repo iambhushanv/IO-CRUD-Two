@@ -8,6 +8,9 @@ import { PostFormComponent } from './shared/components/post-form/post-form.compo
 import { PostCardComponent } from './shared/components/post-card/post-card.component';
 import { MaterialService } from './shared/material/material.module';
 import { GetConfirmComponent } from './shared/components/post-card/get-confirm/get-confirm.component';
+import { StdDashboardComponent } from './shared/components/std-dashboard/std-dashboard.component';
+import { StdFormComponent } from './shared/components/std-form/std-form.component';
+import { StdTableComponent } from './shared/components/std-table/std-table.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { GetConfirmComponent } from './shared/components/post-card/get-confirm/g
     PostDashboardComponent,
     PostFormComponent,
     PostCardComponent,
-    GetConfirmComponent
+    GetConfirmComponent,
+    StdDashboardComponent,
+    StdFormComponent,
+    StdTableComponent
   ],
   imports: [
     BrowserModule,

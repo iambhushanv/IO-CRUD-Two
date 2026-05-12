@@ -31,6 +31,7 @@ export class PostCardComponent implements OnInit {
     let config = new MatDialogConfig
     config.width = '350px'
     config.disableClose = true
+    config.data = `Are you sure, you want to remove the Post with Id ${id} ?` 
 
     let matDilogR = this._matDialog.open(GetConfirmComponent,config)
     matDilogR.afterClosed().subscribe(isdelete => {

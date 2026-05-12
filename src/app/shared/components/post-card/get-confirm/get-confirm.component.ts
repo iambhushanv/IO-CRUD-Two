@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { mergeScan } from 'rxjs';
 
 @Component({
   selector: 'app-get-confirm',
@@ -7,10 +8,13 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./get-confirm.component.scss']
 })
 export class GetConfirmComponent implements OnInit {
-
+  getMsg !: string
   constructor(
-    private _matDialogRef : MatDialogRef<GetConfirmComponent>
-  ) { }
+    private _matDialogRef : MatDialogRef<GetConfirmComponent>,
+    @Inject(MAT_DIALOG_DATA) msg : string
+  ) {  this.getMsg = msg }
+
+ 
 
   ngOnInit(): void {
   }
